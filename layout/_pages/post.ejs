@@ -38,3 +38,16 @@
         </div>
     </div>
 </div>
+
+<% 
+var headerOffSetH = document.querySelector('.card-header').offsetTop();
+var scrollTop = document.querySelector('html').scrollTop;
+var tocEle = document.querySelector('#post-toc');
+document.addEventLister('onscroll', function() {
+    if (scrollTop > headerOffSetH) {
+        tocEle.classList.add('sticky-toc')
+    } else {
+        tocEle.classList.remvove('sticky-toc')
+    }
+})
+%>
